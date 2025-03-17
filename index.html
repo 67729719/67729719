@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh" style="font-size: 15.8583px;">
+    <head>
+    <!-- 设定字符集 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- 偶拍拍你也蛮好 -->
+    <title>简绘AI 你的私人助理-数字化创造时代的智能化工具</title>
+    <!-- oppn.cn opp0.cn ymh8.cn个性展示网站 -->
+    <meta name="keywords" content="简绘AI,超级问答,创意绘画">
+    <!-- 网站描述 -->
+    <meta name="description" content="【简绘AI】数字化创造时代的崛起：智能化工具唤醒创造新力，创造效率提升提升。未来已来，创作效率翻倍提升。opp0.cn偶怕怕0网址， ymh8.cn一抹黑吧站点，oppn.cn偶拍拍你可以不">
+    <!-- Open Graph 协议标签 -->
+    <meta property="og:title" content="简绘AI-数字化创造时代的智能化工具,opp0.cn偶怕怕0网址， ymh8.cn一抹黑吧站点，oppn.cn偶拍拍你可以不">
+    <meta property="og:type" content="website">
+    <!-- 改成你的 -->
+    <meta property="og:description" content="【简绘AI】数字化创造时代的崛起：智能化工具唤醒创造新力，创造效率提升提升。未来已来，创作效率翻倍提升。">
+    <!-- 预加载 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.5)">
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0.5)">
+    <meta http-equiv="windows-Target" content="_top">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="theme-color" content="#14b8a6">
+    <meta name="generator" content="Astro v2.4.2">
+    <link href="static/iconfont.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/index.082d951a.css">
+    <script type="module" src="static/hoisted.8051735c.js"></script>
+    </head>
+  <body class="dark">
+    <div id="page">
+        <div class="astro-J7PV25F6">
+    <canvas id="canvas" class="astro-SLVZHL3X" width="1903" height="881"> </canvas>
+<script lang="js">
+  function project3D(x, y, z, vars) {
+    var p, d
+    x -= vars.camX
+    y -= vars.camY - 8
+    z -= vars.camZ
+    p = Math.atan2(x, z)
+    d = Math.sqrt(x * x + z * z)
+    x = Math.sin(p - vars.yaw) * d
+    z = Math.cos(p - vars.yaw) * d
+    p = Math.atan2(y, z)
+    d = Math.sqrt(y * y + z * z)
+    y = Math.sin(p - vars.pitch) * d
+    z = Math.cos(p - vars.pitch) * d
+    var rx1 = -1000
+    var ry1 = 1
+    var rx2 = 1000
+    var ry2 = 1
+    var rx3 = 0
+    var ry3 = 0
+    var rx4 = x
+    var ry4 = z
+    var uc = (ry4 - ry3) * (rx2 - rx1) - (rx4 - rx3) * (ry2 - ry1)
+    var ua = ((rx4 - rx3) * (ry1 - ry3) - (ry4 - ry3) * (rx1 - rx3)) / uc
+    var ub = ((rx2 - rx1) * (ry1 - ry3) - (ry2 - ry1) * (rx1 - rx3)) / uc
+    if (!z) z = 0.000000001
+    if (ua > 0 && ua < 1 && ub > 0 && ub < 1) {
+      return {
+        x: vars.cx + (rx1 + ua * (rx2 - rx1)) * vars.scale,
+        y: vars.cy + (y / z) * vars.scale,
+        d: x * x + y * y + z * z,
+      }
+    } else {
+      return { d: -1 }
+    }
+  }
+
+  function elevation(x, y, z) {
+    var dist = Math.sqrt(x * x + y * y + z * z)
+    if (dist && z / dist >= -1 && z / dist <= 1) return Math.acos(z / dist)
+    return 0.00000001
+  }
+
+  function rgb(col) {
+    col += 0.000001
+    var r = parseInt((0.5 + Math.sin(col) * 0.5) * 16)
+    var g = parseInt((0.5 + Math.cos(col) * 0.5) * 16)
+    var b = parseInt((0.5 - Math.sin(col) * 0.5) * 16)
+    return '#' + r.toString(16) + g.toString(16) + b.toString(16)
+  }
+
+  function interpolateColors(RGB1, RGB2, degree) {
+    var w2 = degree
+    var w1 = 1 - w2
+    return [
+      w1 * RGB1[0] + w2 * RGB2[0],
+      w1 * RGB1[1] + w2 * RGB2[1],
+      w1 * RGB1[2] + w2 * RGB2[2],
+    ]
+  }
+
+  function rgbArray(col) {
+    col += 0.000001
+    var r = parseInt((0.5 + Math.sin(col) * 0.5) * 256)
+    var g = parseInt((0.5 + Math.cos(col) * 0.5) * 256)
+    var b = parseInt((0.5 - Math.sin(col) * 0.5) * 256)
+    return [r, g, b]
+  }
+
+  function colorString(arr) {
+    var r = parseInt(arr[0])
+    var g = parseInt(arr[1])
+    var b = parseInt(arr[2])
+    return (
+      '#' +
+      ('0' + r.toString(16)).slice(-2) +
+      ('0' + g.toString(16)).slice(-2) +
+      ('0' + b.toString(16)).slice(-2)
+    )
+  }
+
+  function process(vars) {
+    if (vars.points.length < vars.initParticles)
+      for (var i = 0; i < 5; ++i) spawnParticle(vars)
+    var p, d, t
+
+    p = Math.atan2(vars.camX, vars.camZ)
+    d = Math.sqrt(vars.camX * vars.camX + vars.camZ * vars.camZ)
+    d -= Math.sin(vars.frameNo / 80) / 25
+    t = Math.cos(vars.frameNo / 300) / 165
+    vars.camX = Math.sin(p + t) * d
+    vars.camZ = Math.cos(p + t) * d
+    vars.camY = -Math.sin(vars.frameNo / 220) * 15
+    vars.yaw = Math.PI + p + t
+    vars.pitch = elevation(vars.camX, vars.camZ, vars.camY) - Math.PI / 2
+
+    var t
+    for (var i = 0; i < vars.points.length; ++i) {
+      x = vars.points[i].x
+      y = vars.points[i].y
+      z = vars.points[i].z
+      d = Math.sqrt(x * x + z * z) / 1.0075
+      t = 0.1 / (1 + (d * d) / 5)
+      p = Math.atan2(x, z) + t
+      vars.points[i].x = Math.sin(p) * d
+      vars.points[i].z = Math.cos(p) * d
+      vars.points[i].y +=
+        vars.points[i].vy * t * ((Math.sqrt(vars.distributionRadius) - d) * 2)
+      if (vars.points[i].y > vars.vortexHeight / 2 || d < 0.25) {
+        vars.points.splice(i, 1)
+        spawnParticle(vars)
+      }
+    }
+  }
+
+  function drawFloor(vars) {
+    var x, y, z, d, point, a
+    for (var i = -25; i <= 25; i += 1) {
+      for (var j = -25; j <= 25; j += 1) {
+        x = i * 2
+        z = j * 2
+        y = vars.floor
+        d = Math.sqrt(x * x + z * z)
+        point = project3D(x, y - (d * d) / 85, z, vars)
+        if (point.d != -1) {
+          size = 1 + 15000 / (1 + point.d)
+          a = 0.15 - Math.pow(d / 50, 4) * 0.15
+          if (a > 0) {
+            vars.ctx.fillStyle = colorString(
+              interpolateColors(
+                rgbArray(d / 26 - vars.frameNo / 40),
+                [0, 128, 32],
+                0.5 + Math.sin(d / 6 - vars.frameNo / 8) / 2
+              )
+            )
+            vars.ctx.globalAlpha = a
+            vars.ctx.fillRect(
+              point.x - size / 2,
+              point.y - size / 2,
+              size,
+              size
+            )
+          }
+        }
+      }
+    }
+    vars.ctx.fillStyle = '#82f'
+    for (var i = -25; i <= 25; i += 1) {
+      for (var j = -25; j <= 25; j += 1) {
+        x = i * 2
+        z = j * 2
+        y = -vars.floor
+        d = Math.sqrt(x * x + z * z)
+        point = project3D(x, y + (d * d) / 85, z, vars)
+        if (point.d != -1) {
+          size = 1 + 15000 / (1 + point.d)
+          a = 0.15 - Math.pow(d / 50, 4) * 0.15
+          if (a > 0) {
+            vars.ctx.fillStyle = colorString(
+              interpolateColors(
+                rgbArray(-d / 26 - vars.frameNo / 40),
+                [32, 0, 128],
+                0.5 + Math.sin(-d / 6 - vars.frameNo / 8) / 2
+              )
+            )
+            vars.ctx.globalAlpha = a
+            vars.ctx.fillRect(
+              point.x - size / 2,
+              point.y - size / 2,
+              size,
+              size
+            )
+          }
+        }
+      }
+    }
+  }
+
+  function sortFunction(a, b) {
+    return b.dist - a.dist
+  }
+  function getTheme(){
+    return localStorage.getItem("THEME")
+  }
+  function draw(vars) {
+    var theme = getTheme()
+    vars.ctx.globalAlpha = 0.15
+    vars.ctx.fillStyle = theme=="dark"?'#000':"#fff"
+    vars.ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    drawFloor(vars)
+
+    var point, x, y, z, a
+    for (var i = 0; i < vars.points.length; ++i) {
+      x = vars.points[i].x
+      y = vars.points[i].y
+      z = vars.points[i].z
+      point = project3D(x, y, z, vars)
+      if (point.d != -1) {
+        vars.points[i].dist = point.d
+        size = 1 + vars.points[i].radius / (1 + point.d)
+        d = Math.abs(vars.points[i].y)
+        a = 0.8 - Math.pow(d / (vars.vortexHeight / 2), 1000) * 0.8
+        vars.ctx.globalAlpha = a >= 0 && a <= 1 ? a : 0
+        vars.ctx.fillStyle = rgb(vars.points[i].color)
+        if (
+          point.x > -1 &&
+          point.x < vars.canvas.width &&
+          point.y > -1 &&
+          point.y < vars.canvas.height
+        )
+          vars.ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size)
+      }
+    }
+    vars.points.sort(sortFunction)
+  }
+
+  function spawnParticle(vars) {
+    var p, ls
+    pt = {}
+    p = Math.PI * 2 * Math.random()
+    ls = Math.sqrt(Math.random() * vars.distributionRadius)
+    pt.x = Math.sin(p) * ls
+    pt.y = -vars.vortexHeight / 2
+    pt.vy = vars.initV / 20 + Math.random() * vars.initV
+    pt.z = Math.cos(p) * ls
+    pt.radius = 200 + 800 * Math.random()
+    pt.color = pt.radius / 1000 + vars.frameNo / 250
+    vars.points.push(pt)
+  }
+
+  function frame(vars) {
+    if (vars === undefined) {
+      var vars = {}
+      vars.canvas = document.querySelector('canvas')
+      vars.ctx = vars.canvas.getContext('2d')
+      vars.canvas.width = document.body.clientWidth
+      vars.canvas.height = document.body.clientHeight
+      window.addEventListener(
+        'resize',
+        function () {
+          vars.canvas.width = document.body.clientWidth
+          vars.canvas.height = document.body.clientHeight
+          vars.cx = vars.canvas.width / 2
+          vars.cy = vars.canvas.height / 2
+        },
+        true
+      )
+      vars.frameNo = 0
+
+      vars.camX = 0
+      vars.camY = 0
+      vars.camZ = -14
+      vars.pitch = elevation(vars.camX, vars.camZ, vars.camY) - Math.PI / 2
+      vars.yaw = 0
+      vars.cx = vars.canvas.width / 2
+      vars.cy = vars.canvas.height / 2
+      vars.bounding = 10
+      vars.scale = 500
+      vars.floor = 26.5
+
+      vars.points = []
+      vars.initParticles = 700
+      vars.initV = 0.01
+      vars.distributionRadius = 800
+      vars.vortexHeight = 25
+    }
+
+    vars.frameNo++
+    requestAnimationFrame(function () {
+      frame(vars)
+    })
+
+    process(vars)
+    draw(vars)
+  }
+  frame()
+</script>
+    <div class="top astro-J7PV25F6">
+      <div class="width astro-J7PV25F6">
+        <div class="title astro-J7PV25F6">您所有的灵感都集中在一个地方</div>
+        <div class="subtitle astro-J7PV25F6">
+          跟我OppYmh问答绘画，让您的生活更加顺畅便捷。
+        </div>
+        <div class="btn chat astro-J7PV25F6" onclick="location.href='home/'">
+          开启灵感
+        </div>
+      </div>
+    </div>
+    <div class="sub astro-J7PV25F6">
+      <div class="width astro-J7PV25F6">
+        <div class="text astro-J7PV25F6">一句提问，一张绘画快速激发你的灵感。</div>
+        <div class="text1 astro-J7PV25F6">
+          面向专业领域的AI创意工具， 结合
+          <span class="text1-bold chat astro-J7PV25F6" onclick="location.href='home/'">趣味问答</span>
+          和
+          <span class="text1-bold draw astro-J7PV25F6" onclick="location.href='home/'"> 创意绘画</span>
+          两款强大的工具。
+        </div>
+      </div>
+    </div>
+
+    <div class="width astro-J7PV25F6">
+      <div class="module astro-J7PV25F6">
+        <div class="item draw astro-J7PV25F6">
+          <div class="module-left astro-J7PV25F6">
+            <img alt="" class="img astro-J7PV25F6" src="img/home.png">
+          </div>
+          <div class="module-right astro-J7PV25F6">
+            <div class="astro-J7PV25F6">
+              <div class="title astro-J7PV25F6">灵感绘图</div>
+              <div class="subtitle astro-J7PV25F6">
+                新创新，新想法，新构思，新视角<br class="astro-J7PV25F6">
+                让AI拓展你的灵感边界，体验不一样的世界吧！
+              </div>
+            </div>
+            <div class="button astro-J7PV25F6" style="margin-top: 9rem;">
+              <span class="astro-J7PV25F6" onclick="location.href='home/'">开始创作</span>
+              <div class="icon astro-J7PV25F6">
+                <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="width astro-J7PV25F6">
+      <div class="module1 astro-J7PV25F6">
+        <div class="item module1-left draw astro-J7PV25F6">
+          <div class="astro-J7PV25F6">
+            <img alt="" class="img astro-J7PV25F6" src="img/home1.png">
+          </div>
+          <div class="module1-left-text astro-J7PV25F6">
+            <div class="astro-J7PV25F6">
+              <div class="title astro-J7PV25F6">3D盲盒人物</div>
+              <div class="subtitle astro-J7PV25F6">制作你的专属盲盒人物吧！</div>
+            </div>
+
+            <div class="button astro-J7PV25F6">
+              <span class="astro-J7PV25F6" onclick="location.href='home/'">开始创作</span>
+              <div class="icon astro-J7PV25F6">
+                <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="module1-hr astro-J7PV25F6"></div>
+        <div class="module1-right astro-J7PV25F6">
+          <div class="item draw astro-J7PV25F6">
+            <div class="module1-right-img astro-J7PV25F6">
+              <img alt="" class="img astro-J7PV25F6" src="img/home2.png">
+            </div>
+            <div class="module1-right-text astro-J7PV25F6">
+              <div class="astro-J7PV25F6">
+                <div class="title astro-J7PV25F6">专属人物头像</div>
+                <div class="subtitle astro-J7PV25F6">制作你自己的Q版头像吧！</div>
+              </div>
+
+              <div class="button astro-J7PV25F6">
+                <span class="astro-J7PV25F6" onclick="location.href='home/'">开始创作</span><div class="icon astro-J7PV25F6">
+                  <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="module1-hr astro-J7PV25F6"></div>
+          <div class="item chat astro-J7PV25F6">
+            <div class="module1-right-img astro-J7PV25F6">
+              <img alt="" class="img astro-J7PV25F6" src="img/home3.png">
+            </div>
+            <div class="module1-right-text astro-J7PV25F6">
+              <div class="astro-J7PV25F6">
+                <div class="title astro-J7PV25F6">超级问答</div>
+                <div class="subtitle astro-J7PV25F6">你想问的答案都在这里</div>
+              </div>
+              <div class="button astro-J7PV25F6">
+                <span class="astro-J7PV25F6" onclick="location.href='home/'">开始问答</span>
+                <div class="icon astro-J7PV25F6">
+                  <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="width astro-J7PV25F6">
+      <div class="module1_phone astro-J7PV25F6">
+        <div class="item draw astro-J7PV25F6">
+          <div class="astro-J7PV25F6">
+            <img alt="" class="img astro-J7PV25F6" src="img/home1.png">
+          </div>
+          <div class="module1-left-text astro-J7PV25F6">
+            <div class="astro-J7PV25F6">
+              <div class="title astro-J7PV25F6">3D盲盒人物</div>
+              <div class="subtitle astro-J7PV25F6">制作你的专属盲盒人物吧！</div>
+            </div>
+            <div class="button astro-J7PV25F6">
+              <span class="astro-J7PV25F6" onclick="location.href='home/'">开始创作</span><div class="icon astro-J7PV25F6">
+                <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="module1_phone-hr astro-J7PV25F6"></div>
+        <div class="item draw astro-J7PV25F6">
+          <div class="astro-J7PV25F6">
+            <img alt="" class="img astro-J7PV25F6" src="img/home2.png">
+          </div>
+          <div class="module1-left-text astro-J7PV25F6">
+            <div class="astro-J7PV25F6">
+              <div class="title astro-J7PV25F6">专属人物头像</div>
+              <div class="subtitle astro-J7PV25F6">制作你自己的Q版头像吧！</div>
+            </div>
+            <div class="button astro-J7PV25F6">
+              <span class="astro-J7PV25F6" onclick="location.href='home/'">开始创作</span><div class="icon astro-J7PV25F6">
+                <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="module1_phone-hr astro-J7PV25F6"></div>
+        <div class="item chat astro-J7PV25F6">
+          <div class="astro-J7PV25F6">
+            <img alt="" class="img astro-J7PV25F6" src="img/home3.png">
+          </div>
+          <div class="module1-left-text astro-J7PV25F6">
+            <div class="astro-J7PV25F6">
+              <div class="title astro-J7PV25F6">超级问答</div>
+              <div class="subtitle astro-J7PV25F6">你想问的答案都在这里</div>
+            </div>
+            <div class="button astro-J7PV25F6">
+              <span class="astro-J7PV25F6" onclick="location.href='home/'">开始创作</span><div class="icon astro-J7PV25F6">
+                <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub astro-J7PV25F6">
+      <div class="width astro-J7PV25F6">
+        <div class="text astro-J7PV25F6">未来已来，创作效率翻倍提升。</div>
+        <div class="text1 astro-J7PV25F6">
+          数字化创造时代的崛起：智能化工具唤醒创造新力，创造效率提升提升。
+        </div>
+      </div>
+    </div>
+
+    <div class="width astro-J7PV25F6">
+      <div class="module3 astro-J7PV25F6">
+        <div class="module3-item item draw astro-J7PV25F6">
+          <div class="module3-left astro-J7PV25F6">
+            <div class="astro-J7PV25F6">
+              <div class="title astro-J7PV25F6">AI 绘图</div>
+              <div class="subtitle astro-J7PV25F6">快速拓展你的灵感边界</div>
+            </div>
+            <div class="btn astro-J7PV25F6">
+              <span class="astro-J7PV25F6" onclick="location.href='home/'">开始创作</span>
+              <div class="icon astro-J7PV25F6">
+                <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>
+              </div>
+            </div>
+          </div>
+          <div class="module3-right astro-J7PV25F6">
+            <img alt="" class="img astro-J7PV25F6" src="img/home4.png">
+          </div>
+        </div>
+        <div class="module3-hr astro-J7PV25F6"></div>
+        <div class="module3-item item chat astro-J7PV25F6">
+          <div class="module3-left astro-J7PV25F6">
+            <div class="astro-J7PV25F6">
+              <div class="title astro-J7PV25F6">超级问答</div>
+              <div class="subtitle astro-J7PV25F6">快速解答你的疑问答惑</div>
+            </div>
+            <div class="btn astro-J7PV25F6">
+              <span class="astro-J7PV25F6" onclick="location.href='home/'">开始问答</span>
+              <div class="icon astro-J7PV25F6">
+                <i class="iconfont  icon-arrow-right astro-J7PV25F6"></i>                
+              </div>
+            </div>
+          </div>
+          <div class="module3-right astro-J7PV25F6">
+            <img alt="" class="img astro-J7PV25F6" src="img/home5.png">
+          </div>
+        </div>
+        <div class="module3-hr astro-J7PV25F6"></div>
+        </div>
+        </div>  
+<!-- 在最后一个</div>前添加以下代码 -->
+<div class="width astro-J7PV25F6" style="margin-top: 4rem;">
+  <!-- 关于我们 & 联系方式 -->
+  <div class="dual-columns astro-J7PV25F">
+    <!-- 关于我们 -->
+    <div class="about-card draw astro-J7PV25F6">
+      <div class="title astro-J7PV25F6">关于我们</div>
+      <div class="subtitle astro-J7PV25F6">
+        简绘AI是领先的智能创作平台，致力于通过AI技术赋能数字艺术创作。<br>
+        已服务超过50万创作者，生成作品超1000万件。
+      </div>
+      <div class="features astro-J7PV25F6">
+        <div class="feature-item astro-J7PV25F6">
+          <i class="iconfont icon-check astro-J7PV25F6"></i>
+          全链路创作支持
+        </div>
+        <div class="feature-item astro-J7PV25F6">
+          <i class="iconfont icon-check astro-J7PV25F6"></i>
+          7×24小时稳定服务
+        </div>
+      </div>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="contact-card chat astro-J7PV25F6">
+      <div class="title astro-J7PV25F6">联系我们</div>
+      <div class="contact-info astro-J7PV25F6">
+        <div class="info-item astro-J7PV25F6">
+          <i class="iconfont icon-email astro-J7PV25F6"></i>
+          service@jianhui.ai
+        </div>
+        <div class="info-item astro-J7PV25F6">
+          <i class="iconfont icon-phone astro-J7PV25F6"></i>
+          400-6688-888
+        </div>
+        <div class="info-item astro-J7PV25F6">
+          <i class="iconfont icon-location astro-J7PV25F6"></i>
+          北京市海淀区AI科技园B座18层
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 备案信息 -->
+<div class="beian-box astro-J7PV25F6">
+  <a href="https://beian.miit.gov.cn" target="_blank" class="beian-link astro-J7PV25F6">
+    京ICP备12345678号-2
+  </a>
+</div>
+
+<style>
+  /* 新增样式 */
+  .dual-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+
+  .about-card, .contact-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(82, 130, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .features {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #8ab4f8;
+  }
+
+  .contact-info {
+    display: grid;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .beian-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+  }
+
+  .beian-link {
+    color: #8ab4f8!important;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .dual-columns {
+      grid-template-columns: 1fr;
+    }
+    
+    .beian-box {
+      right: 50%;
+      transform: translateX(50%);
+      width: max-content;
+    }
+  }
+</style>
+	</div>
+
+  <script type="text/javascript">
+    ;(function () {
+      const el = document.querySelector('body')
+      const theme = localStorage.getItem('THEME') ?? 'dark'
+      el.setAttribute('class', theme)
+      localStorage.setItem('THEME', theme)
+      const html = document.documentElement
+      function setFont() {
+        const cliWidth = html.clientWidth
+        if (cliWidth > 1920) {
+          html.style.fontSize = '16px'
+          return
+        }
+        html.style.fontSize =
+          (16 * (cliWidth / 1920) < 10 ? 10 : 16 * (cliWidth / 1920)) + 'px'
+      }
+      setFont()
+      window.onresize = function () {
+        setFont()
+      }
+    })()
+  </script>
+
+</body>
+</html>
