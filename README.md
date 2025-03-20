@@ -1,4 +1,4 @@
-### Hi there 👋
+### Hi 你好啊 👋
 <div align="center">
   <!-- dynamic typing effect 动态打字效果 -->
   <div>
@@ -28,12 +28,12 @@ Here are some ideas to get you started:
   <img align="right"  alt="GIF" src="https://img-blog.csdnimg.cn/2019122617442217.gif" width="240"/>
 </a>
 
-### Hello World!  I am <b>KevinYu 大雨<a target="_blank" href="javascript:;"></a></b>
+### 向全世界问好，我是 <b>KevinYu 大雨<a target="_blank" href="javascript:;"></a></b>
 
 
-- :hearts: Passionate about open source software. 
-- :1st_place_medal: My projects are trusted by developers.
-- :sun_with_face: Highlights of my successful endeavors.
+- :hearts: 一名从事丝网印花制版的分色师. 
+- :1st_place_medal: 一个挣扎在数码喷绘崩溃边缘的工程师.
+- :sun_with_face: 喜欢捣腾各种数字智能AI绘图技术的程序师.
 
 <a href="https://autofelix.blog.csdn.net">
     <img src="https://img.shields.io/badge/CSDN Page View-125K-E65A65.svg" alt="" title="Python_AI的csdn" />
@@ -41,9 +41,8 @@ Here are some ideas to get you started:
 <a href="https://wakatime.com/@7cf3d334-b735-41ee-9f43-1782380b513b"><img src="https://wakatime.com/badge/user/7cf3d334-b735-41ee-9f43-1782380b513b.svg" alt="Total time coded since Jan 4 2021" /></a>
 <br/>
 <br/>
-<br/>
 
-You are my ![Visitor Count](https://profile-counter.glitch.me/yxn4065/count.svg)th visitor
+你是我第 ![Visitor Count](https://profile-counter.glitch.me/yxn4065/count.svg)名空间访客
 
 
 ---
@@ -52,7 +51,7 @@ You are my ![Visitor Count](https://profile-counter.glitch.me/yxn4065/count.svg)
 ![](https://raw.githubusercontent.com/yxn4065/yxn4065/refs/heads/output/github-contribution-grid-snake.svg)
 
 
-### Skills
+### 联动
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=python,c,cpp,java,pytorch,git,raspberrypi,docker,vim,pycharm,mysql" />
@@ -62,16 +61,16 @@ You are my ![Visitor Count](https://profile-counter.glitch.me/yxn4065/count.svg)
 <!-- https://github.com/badges/shields -->
 <p align="center">
 <img src="https://komarev.com/ghpvc/?username=yxn4065&abbreviated=true&color=yellow" />
-<a href="https://github.com/yxn4065"><img src="https://img.shields.io/badge/GitHub-yxn4065-blue?logo=github" /></a>
-<a href="https://yxn4065.blog.csdn.net"><img src="https://img.shields.io/badge/CSDN-Xenon_AI-red" /></a>
-<img src="https://img.shields.io/badge/QQ-2038865970-green?logo=tencentqq" />
-<img href="mailto:xenon4065@gmail.com" src="https://img.shields.io/badge/xenon4065@gmail.com-D14836?logo=gmail&logoColor=white" />
+<a href="https://github.com/67729719"><img src="https://img.shields.io/badge/GitHub-67729719-blue?logo=github" /></a>
+<a href="https://hzjd888.blog.csdn.net"><img src="https://img.shields.io/badge/CSDN-hzjd888-red" /></a>
+<img src="https://img.shields.io/badge/QQ-67729719-green?logo=tencentqq" />
+<img href="mailto:yulinjian@gmail.com" src="https://img.shields.io/badge/yulinjian@gmail.com-D14836?logo=gmail&logoColor=white" />
 </p>
 
 
 ---
 
-### About My Github
+### 关于
 <div align="center">
   <table style="width:100%;">
     <tr>
@@ -95,7 +94,7 @@ You are my ![Visitor Count](https://profile-counter.glitch.me/yxn4065/count.svg)
 
 ---
 
-### 📊 WakaTime
+### 📊 统计
 <!-- [![wakatime](https://wakatime.com/badge/user/7cf3d334-b735-41ee-9f43-1782380b513b.svg)](https://wakatime.com/@7cf3d334-b735-41ee-9f43-1782380b513b) -->
 
 <!-- https://github.com/anuraghazra/github-readme-stats -->
