@@ -11,7 +11,7 @@
   ---
 
 <!--
-**shihuili1218/shihuili1218** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**67729719/67729719** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 Here are some ideas to get you started:
 
 - 🔭 I’m currently working on ...
@@ -28,7 +28,7 @@ Here are some ideas to get you started:
   <img align="right"  alt="GIF" src="https://img-blog.csdnimg.cn/2019122617442217.gif" width="240"/>
 </a>
 
-### 向全世界问好，我是 <b>KevinYu 大雨<a target="_blank" href="javascript:;"></a></b>
+### 📊 向同行们虚心请教，我是 <b>KevinYu 大雨<a target="_blank" href="javascript:;"></a></b>
 
 
 - :hearts: 一名从事丝网印花制版的分色师. 
@@ -41,8 +41,9 @@ Here are some ideas to get you started:
 <a href="https://wakatime.com/@7cf3d334-b735-41ee-9f43-1782380b513b"><img src="https://wakatime.com/badge/user/7cf3d334-b735-41ee-9f43-1782380b513b.svg" alt="Total time coded since Jan 4 2021" /></a>
 <br/>
 <br/>
+<br/>
 
-你是我第 ![Visitor Count](https://profile-counter.glitch.me/yxn4065/count.svg)名空间访客
+你是我空间的第 ![Visitor Count](https://profile-counter.glitch.me/yxn4065/count.svg)名访客
 
 
 ---
@@ -51,7 +52,7 @@ Here are some ideas to get you started:
 ![](https://raw.githubusercontent.com/yxn4065/yxn4065/refs/heads/output/github-contribution-grid-snake.svg)
 
 
-### 联动
+### 个人信息👤 
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=python,c,cpp,java,pytorch,git,raspberrypi,docker,vim,pycharm,mysql" />
@@ -70,7 +71,7 @@ Here are some ideas to get you started:
 
 ---
 
-### 关于
+### 我的项目📚
 <div align="center">
   <table style="width:100%;">
     <tr>
@@ -94,12 +95,13 @@ Here are some ideas to get you started:
 
 ---
 
-### 📊 统计
+### 统计信息🛠️
 <!-- [![wakatime](https://wakatime.com/badge/user/7cf3d334-b735-41ee-9f43-1782380b513b.svg)](https://wakatime.com/@7cf3d334-b735-41ee-9f43-1782380b513b) -->
 
 <!-- https://github.com/anuraghazra/github-readme-stats -->
 <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=yxn4065&theme=transparent&hide_border=true&layout=compact&langs_count=20&range=last_30_days" />
 <!--START_SECTION:waka-->
+
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%2C838%20hrs%2045%20mins-blue)
 
 ![Profile Views](http://img.shields.io/badge/Profile%20Views-58-blue)
